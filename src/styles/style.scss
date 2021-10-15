@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+
+$root-color: #e48020;
+// $theme-colors: (
+//   "primary": $root-color,
+//   "orange": $root-color,
+// );
+
+@import "~bootstrap/scss/bootstrap";
+
+body,
+html {
+  font-size: 1vw;
+  color: white;
+  font-weight: 500;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box !important;
+  font-family: "Oswald", sans-serif, "Microsoft JhengHei", "Helvetica", Arial !important;
+  font-weight: 900;
+}
+
+p {
+  margin: 0;
+}
+
+.yt-player {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-bottom: 55%;
+  div,
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
