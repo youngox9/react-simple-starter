@@ -1,11 +1,10 @@
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: ["@babel/polyfill", "./src/index.js"],
-  output: {
-    filename: "bundle.js"
-  },
+
   module: {
     rules: [
       {
@@ -59,13 +58,19 @@ module.exports = {
     }
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, "src/index.html"),
-      filename: "./index.html"
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html"
     })
   ],
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "bundle.js"
+  },
   devServer: {
-    compress: true,
+    // contentBase: "./build",
+    // compress: true,
+    hot: true,
     proxy: {
       "/api": {
         target: "http://localhost:3000",

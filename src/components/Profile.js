@@ -8,7 +8,7 @@ import YouTube from "react-youtube";
 import Tilt from "react-tilt";
 import Particles from "react-particles-js";
 import BlockRevealAnimation from "react-block-reveal-animation";
-import profileImage from "@/static/profile.jpg";
+import profileImage from "@/assests/profile.jpg";
 import Cover from "@/components/Cover";
 
 const ProfileDiv = styled.div`
